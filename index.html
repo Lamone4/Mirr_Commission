@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>커미션 신청서</title>
+<title>아이쿠루시이 커미션 신청서-Mirr</title>
 <style>
 :root{color-scheme:light;--bg:#fff;--card:#fff;--ink:#222;--sub:#777;--line:#ddd;--pink:#333;--pink2:#eee;--err:#d6264f;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -57,13 +57,13 @@ textarea:focus,input[type=text]:focus{border-color:var(--pink)}
 
 <div id="formView">
   <h1>커미션 신청서</h1>
-  <p class="lead">사진 첨부와 내용 작성, 옵션 체크를 마치면 영수증이 만들어져요. 완성된 영수증을 이미지로 저장(또는 캡쳐)해서 보내주세요.</p>
+  <p class="lead">필수사항을 기재하면 영수증을 제작할 수 있어요! 완성된 신청서를 이미지로 저장(또는 캡쳐)해서 보내주세요~! >w<</p>
   <div id="fields"></div>
-  <button class="btn" id="make">신청서 프린트!</button>
+  <button class="btn" id="make">영수증 프린트!</button>
 </div>
 
 <div id="receiptView" hidden>
-  <div class="guide">📸 영수증 맨 아래의 <b>이미지로 저장</b> 버튼을 눌러 저장한 뒤 보내주세요. 저장이 안 되면 화면에 뜨는 이미지를 길게 눌러 저장하거나 캡쳐해서 보내주세요.</div>
+  <div class="guide">📸 영수증 맨 아래의 <b>이미지로 저장</b> 버튼을 눌러 저장한 뒤 보내주세요. 저장이 안 되면 화면에 뜨는 이미지를 길게 눌러 저장하거나 캡쳐해서 보내주시면 됩니다!</div>
   <div class="rc" id="rc"></div>
   <button class="btn" id="save">📥 이미지로 저장 (PNG)</button>
   <button class="btn ghost" id="back" style="margin-top:10px">← 수정하기</button>
@@ -78,7 +78,7 @@ var FIELDS=[
 {id:2,t:'2. 캐릭터 의상',d:'(외관 의상과 다르다면 이곳에 첨부 or 기재해주세요.)',type:'text',photo:1},
 {id:3,t:'3. 대사/자막 변경',d:'(원하시는 문구를 적어주세요! 대사는 A와 B의 말풍선, 자막은 샘플 하단의 노란 자막입니다!)',req:1,type:'text'},
 {id:4,t:'4. 표정 변경',d:'(샘플처럼 or 텍스트 설명 or 참고 자료)',type:'text',photo:1},
-{id:5,t:'5. 포즈 변경 (+15,000 P)',d:'(변경이 필요할 시 기재해주세요! 길거나 움직임이 많은 포즈는 추가금+n 혹은 거절 될 수 있습니다!) 필요 없을 시 비워주세요. 텍스트를 추가하면 추가금 합산에 포함됩니다! 제가 꼼꼼히 확인하기 때문에 상관은 없지만!!',type:'text',photo:1},
+{id:5,t:'5. 포즈 변경 (+15,000 P)',d:'(변경이 필요할 시 기재해주세요! 길거나 움직임이 많은 포즈는 추가금+n 혹은 거절 될 수 있습니다!) - 필요 없을 시 비워주세요! 영수증 발부 시 추가금으로 책정 돼 버립니다 8w8!! 하지만 제가 꼼꼼히 검토하기 때문에 상관 없다면 자유롭게 부탁드려요~!',type:'text',photo:1},
 {id:6,t:'6. 보정 색감',d:'(기본 색상은 핑크 입니다.)',type:'text'},
 {id:7,t:'7. 샘플 공개 여부',req:1,type:'check',opts:['공개','비공개 (+ 5,000)']},
 {id:8,t:'8. 슬롯 마감 시 안내사항',d:'(신청서가 들어온 순서대로 작업이 시작 됩니다! 앞서 받은 커미션이 완료되면 다음 분께 결제 요청을 드리는 식입니다.)',type:'radio',opts:['글쿤','네']}
@@ -201,7 +201,7 @@ function receipt(){
   if(!extra.length)rc.appendChild(el('div','c','추가금 항목 없음'));
   var t=el('div','row tot');t.appendChild(el('span',null,'추가금 합계'));t.appendChild(el('span',null,money(sum)+' P'));
   t.style.marginTop='8px';rc.appendChild(t);
-  rc.appendChild(el('div','c','※ 기본 금액 별도 / 포즈는 난이도에 따라 추가금 변동 가능')).style.marginTop='8px';
+  rc.appendChild(el('div','c','※ 기본 금액 별도 / 작업 난이도에 따라 추가금이 변동 될 수 있습니다.')).style.marginTop='8px';
   rc.appendChild(el('hr','hr'));
   rc.appendChild(el('div','bar'));
   rc.appendChild(el('div','c','THANK YOU ♡')).style.marginTop='10px';
